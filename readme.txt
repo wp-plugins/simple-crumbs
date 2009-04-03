@@ -17,9 +17,9 @@ Simple Breadcrumbs - Generates a breadcrumb trail for pages and blog entries. Re
 Author URI: http://www.cankoluman.com
 
 Usage Examples:  
-*	Usage: `<?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>`  
-*	Usage: `[simple_crumbs root="Some Root" /]`  
-*	Usage: `[simple_crumbs /]`
+*	  Usage: `<?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>`  
+*	  Usage: `[simple_crumbs root="Some Root" /]`  
+*	  Usage: `[simple_crumbs /]`
 
 Released under GNU v2 June 1991
 
@@ -35,7 +35,7 @@ A. Configuration Options
 B. Installation
 ----------------------------------
 1. Copy to plugins (`/wp-content/plugins/`) folder
-1. Usage:
-* from php: `<?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>`
-* from html with document root: `[simple_crumbs root="Some Root" /]`
+1. Usage:  
+* from php: `<?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>`  
+* from html with document root: `[simple_crumbs root="Some Root" /]`  
 * from html without document root: `[simple_crumbs /]`
