@@ -34,7 +34,7 @@ A. Configuration Options
 B. Installation
 ----------------------------------
 0. Copy to plugins folder
-1. Use:
-from php: <?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>
+1. Usage:
+from php: `<?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>`
 from html with document root: [simple_crumbs root="Some Root" /]
 from html without document root: [simple_crumbs /]
