@@ -16,7 +16,8 @@ Simple Breadcrumbs - Generates a breadcrumb trail for pages and blog entries. Re
 **Notes:** link/crumb information from $query_string, page/post information from $post, using permalink info for making links, using permalink structure for bootstrapping unrolled recursions (deepest to topmost).  
 Author URI: http://www.cankoluman.com
 
-Usage Examples:  
+Usage Examples: 
+---------------------------------- 
 *	  Usage: `<?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>`  
 *	  Usage: `[simple_crumbs root="Some Root" /]`  
 *	  Usage: `[simple_crumbs /]`
@@ -28,9 +29,17 @@ Released under GNU v2 June 1991
 
 A. Configuration Options
 ----------------------------------
-1. Document Root Crumb name passed to function
+1. Document Root Crumb name passed to function.
 1. Following css class may be defined externally: navCrumb.lnk if needed.
-1. Separator may be chosen
+1. Separator may be chosen.  
+
+**Sample Output** (with Home as 'root') 
+---------------------------------- 
+1. Home > Section > Subsection
+1. Home > Blog > 2009 > 04 > 01 > Blog Title  
+1. Home > Search Results  
+1. Home > Tag > Tag Name  
+
 
 B. Installation
 ----------------------------------
