@@ -1,6 +1,6 @@
 === Simple Crumbs ===
 Contributors: Can Koluman
-Tags: comments, spam
+Tags: breadcrumbs, navigation
 Requires at least: 2.7
 Tested up to: 2.7.1
 Stable tag: trunk
@@ -16,7 +16,7 @@ Notes: link/crumb information from $query_string, page/post information from $po
 Author URI: http://www.cankoluman.com
 
 Usage Examples:
-Usage: <?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>
+Usage: `<?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>`
 Usage: [simple_crumbs root="Some Root" /]
 Usage: [simple_crumbs /]
 
