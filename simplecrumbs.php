@@ -7,13 +7,17 @@
 @Note: using permalink info for making links
 @Note: using permalink structure for bootstrapping unrolled recursions (deepest to topmost)
 @Author: Can Koluman
-@Version: 0.1.6
-Author URI: http://design.cankoluman.com/
+@Version: 0.2.3
+Author URI: http://www.strawberryfin.co.uk/
 Usage Examples:
 Usage: <?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>
 Usage: [simple_crumbs root="Some Root" /]
 Usage: [simple_crumbs /]
 License: Released under GNU v2 June 1991
+
+fixes in this version: 
+** Missing function sc_unpack_query_string added
+** Multiple article category handling added
 */
 
 function get_path_titles ($post, &$titles) {
@@ -25,6 +29,19 @@ function get_path_titles ($post, &$titles) {
 		get_path_titles ($post_parent, &$titles);
 	}
 	return;
+}
+
+function sc_unpack_query_string($query_string) {
+	$temp = explode('&', $query_string);
+	$results = array();
+	foreach($temp as $item) {
+	
+		list ($key, $value) = explode('=', $item);
+		$results[$key] = $value;
+
+	}
+	
+	return $results;
 }
 
 
@@ -43,7 +60,7 @@ function make_permalink($array, $post_type) {
 		//reconstruct permalink to match link selection
 		case 'post':
 			$permalink = '/';
-			if (isset($array['category_name'])) $permalink .= urldecode($array['category_name']) . '/';
+			if (isset($array['category_name'])) $permalink .= '/category/'.urldecode($array['category_name']) . '/';
 			if (isset($array['year'])) $permalink .= urldecode($array['year']) . '/';
 			if (isset($array['monthnum'])) $permalink .= urldecode($array['monthnum']) . '/';
 			if (isset($array['day'])) $permalink .= urldecode($array['day']) . '/';
@@ -72,7 +89,7 @@ function make_permalink($array, $post_type) {
 
 function simplecrumbs_shortcode ( $attr )
 {
-	$divider = ' &gt; ';
+	$divider = ' &raquo; ';
 	$titles = '';
 	$titles_divider = '|^|';
 	$theCrumb = array( );
@@ -84,7 +101,7 @@ function simplecrumbs_shortcode ( $attr )
 	//note: ideally should sanitise title to HTML conformant
 	global $post;
 	global $query_string;
-	$query_array = unpack_query_string($query_string);
+	$query_array = sc_unpack_query_string($query_string);
 
 	extract(shortcode_atts(array(
 		'root'		 =>	''
@@ -118,11 +135,11 @@ function simplecrumbs_shortcode ( $attr )
 	$tok = strtok( $permalink, '/');
 
 
-	while  ($tok ) 
+	while  ($tok) 
 	{		
 		$baseURL .= sprintf("/$tok");
 		
-		$strCrumb .= ($strCrumb) ? $divider : '';
+		if ($tok<>'category') $strCrumb .= ($strCrumb) ? $divider : '';
 		switch ($tok) {
 			
 			// breadcrumb components which are not linked
@@ -133,9 +150,13 @@ function simplecrumbs_shortcode ( $attr )
 			case 'Search Results':
 				$strCrumb .= ucfirst($tok);		
 				break;
+
+			case 'category':
+				break;
 		
 			default:
 				if (isset($query_array['tag'])) $titles[$tok] = single_tag_title("", false);
+				//if (isset($query_array['category_name'])) $titles[$tok] = $query_array['category_name'];
 				$replace = (isset($titles[$tok])) ? array($baseURL . '/', $titles[$tok]) : array($baseURL . '/', ucfirst($tok));
 				$strCrumb .= preg_replace($pattern, $replace, $htmlTemplate);
 		}
