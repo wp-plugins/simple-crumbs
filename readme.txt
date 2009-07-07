@@ -3,7 +3,7 @@ Contributors: Can Koluman
 Tags: breadcrumbs, navigation
 Requires at least: 2.7
 Tested up to: 2.8
-Stable tag: trunk
+Stable tag: 0.2.3
 
 
 Summary: Generates navigation bread crumbs in WordPress. Requires permalinks.
@@ -14,17 +14,8 @@ Summary: Generates navigation bread crumbs in WordPress. Requires permalinks.
 Simple Breadcrumbs - Generates a breadcrumb trail for pages and blog entries. Requires use of permalinks, and php > 4.1.0, tested WP 2.7x, 2.8.  
 
 **Notes:** link/crumb information from $query_string, page/post information from $post, using permalink info for making links, using permalink structure for bootstrapping unrolled recursions (deepest to topmost).  
-Author URI: http://www.strawberryfin.co.uk
+Author URI: http://www.strawberryfin.co.uk  
 
-
-== Changelog ==
-
-
-Version: 0.2.3  
-fixes in this version:    
-* Missing function `sc_unpack_query_string` added. Yes! it actually works now. Sorry about the earlier omission.  
-* Multiple article category handling added.    
-  
 
 
 **Usage Examples:** 
@@ -40,6 +31,18 @@ fixes in this version:
 1. Home > Blog > 2009 > 04 > 01 > Blog Title  
 1. Home > Search Results  
 1. Home > Tag > Tag Name  
+
+
+== Changelog ==
+
+
+Version: 0.2.3  
+fixes in this version:    
+* Missing function `sc_unpack_query_string` added. Yes! it actually works now. Sorry about the earlier omission.  
+* Multiple article category handling added.    
+  
+
+
 
 Released under GNU v2 June 1991
 
