@@ -3,7 +3,7 @@ Contributors: Can Koluman
 Tags: breadcrumbs, navigation
 Requires at least: 2.7
 Tested up to: 2.8
-Stable tag: trunk
+Stable tag: 0.2.3
 
 
 Summary: Generates navigation bread crumbs in WordPress. Requires permalinks.
