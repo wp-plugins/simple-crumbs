@@ -7,7 +7,7 @@
 @Note: using permalink info for making links
 @Note: using permalink structure for bootstrapping unrolled recursions (deepest to topmost)
 @Author: Can Koluman
-@Version: 0.2.3
+@Version: 0.2.5
 Author URI: http://www.strawberryfin.co.uk/
 Usage Examples:
 Usage: <?php echo do_shortcode('[simple_crumbs root="Home" /]') ?>
@@ -25,7 +25,7 @@ function get_path_titles ($post, &$titles) {
 
 	if ($post->post_parent) {
 		$post_parent = get_post($post->post_parent);
-		$titles[$post_parent->post_name] = "$post_parent->post_title";
+		$titles[$post_parent->post_name] = get_the_title($post_parent);
 		get_path_titles ($post_parent, &$titles);
 	}
 	return;
@@ -89,7 +89,7 @@ function make_permalink($array, $post_type) {
 
 function simplecrumbs_shortcode ( $attr )
 {
-	$divider = ' &raquo; ';
+	$divider = ' &gt; ';
 	$titles = '';
 	$titles_divider = '|^|';
 	$theCrumb = array( );
