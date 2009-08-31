@@ -3,7 +3,7 @@ Contributors: Can Koluman
 Tags: breadcrumbs, navigation
 Requires at least: 2.7
 Tested up to: 2.8
-Stable tag: 0.2.3
+Stable tag: 0.2.5
 
 
 Summary: Generates navigation bread crumbs in WordPress. Requires permalinks.
@@ -36,6 +36,12 @@ Author URI: http://www.strawberryfin.co.uk
 == Changelog ==
 
 
+Version: 0.2.5  
+fixes in this version:    
+* Internationalisation support added for title field. Thanks to G‡bor Udvari for this excellent suggestion.
+
+Previous Changes
+-----------------
 Version: 0.2.3  
 fixes in this version:    
 * Missing function `sc_unpack_query_string` added. Yes! it actually works now. Sorry about the earlier omission.  
