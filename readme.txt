@@ -2,8 +2,8 @@
 Contributors: Can Koluman
 Tags: breadcrumbs, navigation
 Requires at least: 2.7
-Tested up to: 2.8
-Stable tag: 0.2.5
+Tested up to: 2.9
+Stable tag: 0.2.6
 
 
 Summary: Generates navigation bread crumbs in WordPress. Requires permalinks.
@@ -11,7 +11,7 @@ Summary: Generates navigation bread crumbs in WordPress. Requires permalinks.
 == Description ==
 
 
-Simple Breadcrumbs - Generates a breadcrumb trail for pages and blog entries. Requires use of permalinks, and php > 4.1.0, tested WP 2.7x, 2.8.  
+Simple Breadcrumbs - Generates a breadcrumb trail for pages and blog entries. Requires use of permalinks, and php > 4.1.0, tested WP 2.7x, 2.8x, 2.9.  
 
 **Notes:** link/crumb information from $query_string, page/post information from $post, using permalink info for making links, using permalink structure for bootstrapping unrolled recursions (deepest to topmost).  
 Author URI: http://www.strawberryfin.co.uk  
@@ -33,8 +33,17 @@ Author URI: http://www.strawberryfin.co.uk
 1. Home > Tag > Tag Name  
 
 
+== Upgrade Notice ==
+* Basic operation in 2.9 confirmed (0.2.6 is WP 2.9 version bump).  
+
+
+
 == Changelog ==
 
+
+Version: 0.2.6  
+fixes in this version: none  
+* Tested with 2.9 basic operation confirmed.
 
 Version: 0.2.5  
 fixes in this version:    
